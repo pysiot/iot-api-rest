@@ -1,0 +1,20 @@
+{
+  "name": "iot-api-rest",
+  "version": "1.0.0",
+  "description": "IOT  Api Rest",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "iot"
+  ],
+  "author": "acanta",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "mysql2": "^1.7.0",
+    "sequelize": "^5.19.3"
+  }
+}
