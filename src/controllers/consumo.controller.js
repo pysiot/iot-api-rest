@@ -20,11 +20,11 @@ async function getConsumos(req, res){
 // Muestra Dispositivo por Device.
 async function getConsumoByDevice(req, res){
     const { device } = req.params;
-    try {        
+    try {
         const project = await Consumo.findOne({
             where:{ device }
         });
-        res.json(project);        
+        res.json(project);
     } catch (e) {
         res.status(400).json({
             message: 'Error al intentar obtener consumo del device '+device +', '+ e,
@@ -38,7 +38,7 @@ async function getConsumoByDevice(req, res){
 async function createConsumo(req, res){
     const {device, datos, pulsos, bateria, debug, tiempo} = req.body;
     try {
-        let newDispositivo = await Consumo.create({
+        let newConsumo = await Consumo.create({
             device,
             datos,
             pulsos,
@@ -70,12 +70,12 @@ async function message(req, res){
         return res.json({
             message: 'Welcome Miincode',
             data: "La data del modelo Usuario esta actualizada"
-        });       
+        });
     } catch (e) {
         res.status(400).json({
             message:'Error al intentar mostrar el mensaje. '+ error,
             estado: false
-        });                    
+        });
     }
 }
 module.exports = {
@@ -84,4 +84,3 @@ module.exports = {
     createConsumo: createConsumo,
     message: message
 }
-    

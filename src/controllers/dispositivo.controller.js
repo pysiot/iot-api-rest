@@ -20,11 +20,11 @@ async function getDispositivos(req, res){
 // Muestra Dispositivo por Device.
 async function getDispositivoByDevice(req, res){
     const { device } = req.params;
-    try {        
+    try {
         const project = await Dispositivo.findOne({
             where:{ device }
         });
-        res.json(project);        
+        res.json(project);
     } catch (e) {
         res.status(400).json({
             message: 'Error al intentar obtener datos del device '+device +', '+ e,
@@ -49,13 +49,13 @@ async function createDispositivo(req, res){
 
         if (newDispositivo){
             return res.json({
-                message: 'Dispositivo created successfully',
+                message: 'Device created successfully!',
                 data: newDispositivo
             });
         }
     } catch (error) {
         res.status(400).json({
-            message: 'Error al intentar registrar el Dispositivo, '+ error,
+            message: 'Error trying to register device., '+ error,
             data: {
             }
         });
