@@ -29,11 +29,29 @@ const Consumo = sequelize.define('consumos', {
     },
     bateria: {
         type: Sequelize.INTEGER
-    },    
+    },
     debug: {
         type: Sequelize.TEXT
     },
     tiempo: {
+        type: Sequelize.INTEGER
+    },
+    consumo_calc: {
+        type: Sequelize.INTEGER
+    },
+    kwh_calc: {
+        type: Sequelize.DOUBLE
+    },
+    fecha_calc: {
+        type: Sequelize.TEXT
+    },
+    anio_calc: {
+        type: Sequelize.TEXT
+    },
+    mes_calc: {
+        type: Sequelize.TEXT
+    },
+    dia_calc: {
         type: Sequelize.INTEGER
     }
 
