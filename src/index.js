@@ -1,6 +1,6 @@
 const app1 = require('./app');
- 
-const port = process.env.PORT || 3002;
+
+const port = process.env.HTTP_PORT || 3002;
 
 async function main(){
   await app1.listen(port);
