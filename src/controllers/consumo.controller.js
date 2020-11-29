@@ -128,6 +128,23 @@ async function getConsumoByDevice(req, res){
     }
 }
 
+async function getBuscarSiDeviceConsume(req, res){
+  const { device } = req.params;
+  
+  try {
+      const project = await Consumo.findOne({
+          where:{device: dvc},
+          order:[['id', 'DESC']],
+      });
+      res.json(project);
+  } catch (e) {
+      res.status(400).json({
+          message: 'Error trying to get consumption of device '+device +', '+ e,
+          estado: false
+      });
+  }
+}
+
 function nombreMes(nro_mes){
   var nombreMes = ''; 
   if(nro_mes == 01){ return nombreMes = "ENERO";}
@@ -250,5 +267,6 @@ module.exports = {
     getConsumoMensualPorAnio: getConsumoMensualPorAnio,
     resetAllDataDevice: resetAllDataDevice,
     getConsumoDelDia:getConsumoDelDia,
+    getBuscarSiDeviceConsume:getBuscarSiDeviceConsume,
     message: message
 }
