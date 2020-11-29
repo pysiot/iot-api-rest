@@ -133,7 +133,7 @@ async function getBuscarSiDeviceConsume(req, res){
   
   try {
       const project = await Consumo.findOne({
-          where:{device: dvc},
+          where:{device: device},
           order:[['id', 'DESC']],
       });
       res.json(project);
