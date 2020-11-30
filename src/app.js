@@ -8,6 +8,8 @@ const consumoRoutes = require('./routes/consumo');
 //Initialization
 const app = express();
 
+
+
 //middleware
 //app.use(morgan('dev'));
 app.use(json());

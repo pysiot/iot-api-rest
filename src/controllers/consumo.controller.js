@@ -41,6 +41,30 @@ async function getConsumoMensualPorAnio(req, res){
   }
 }
 
+async function getConsumoMensualPorAnio_Device(req, res) {
+
+  const {device, anio} = req.body;
+  
+  try {
+    const project = await Consumo.findAll({
+      where:{device: device, anio_calc: anio},
+      attributes:['mes_calc', [sequelize.fn('sum', sequelize.col('kwh_calc')), 'total']],      
+      group: ['mes_calc'],
+      raw: true,
+      order:[['id', 'ASC']]
+    });
+    console.log('++++++++++++ MENSUAL +++++++++++++');
+    console.log(project);
+    console.log('------------- MENSUAL -----------')
+      res.json(project);
+  } catch (e) {
+      res.status(400).json({
+          message: 'Error trying to get month consumption. '+ e,
+          estado: false
+      });
+  }
+}
+
 async function resetAllDataDevice(req, res){
   const { device } = req.params;
   try {
@@ -63,6 +87,29 @@ async function getConsumoAnual(req, res){
   
   try {
     const project = await Consumo.findAll({
+      attributes:['anio_calc', [sequelize.fn('sum', sequelize.col('kwh_calc')), 'total']],      
+      group: ['anio_calc'],
+      raw: true,
+      order:[['id', 'ASC']]
+    });
+    console.log('+++++++++++++++++++++++++');
+    console.log(project);
+    console.log('------------------------')
+      res.json(project);
+  } catch (e) {
+      res.status(400).json({
+          message: 'Error trying to get annual consumption. '+ e,
+          estado: false
+      });
+  }
+}
+
+async function getConsumoAnual_Device(req, res){
+  const { device } = req.params;
+  
+  try {
+    const project = await Consumo.findAll({
+      where:{device: device},
       attributes:['anio_calc', [sequelize.fn('sum', sequelize.col('kwh_calc')), 'total']],      
       group: ['anio_calc'],
       raw: true,
@@ -268,5 +315,7 @@ module.exports = {
     resetAllDataDevice: resetAllDataDevice,
     getConsumoDelDia:getConsumoDelDia,
     getBuscarSiDeviceConsume:getBuscarSiDeviceConsume,
+    getConsumoMensualPorAnio_Device: getConsumoMensualPorAnio_Device,
+    getConsumoAnual_Device: getConsumoAnual_Device,
     message: message
 }
