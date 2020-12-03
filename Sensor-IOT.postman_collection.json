@@ -1,0 +1,591 @@
+{
+	"info": {
+		"_postman_id": "b4f6a041-bdc4-48a2-9dad-381d66d0a20b",
+		"name": "Sensor-IOT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Local",
+			"item": [
+				{
+					"name": "[ LIST ] getConsumos  (local)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/api/consumo/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"consumo",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dia  (local)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/api/consumo/dia",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"consumo",
+								"dia"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GuardarConsumo-local",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"bateria\": 5000,\n        \"datos\": \"ssasasassa\",\n        \"debug\": \"1\",\n        \"device\": \"3FD1C0\",\n        \"pulsos\": 1200,\n        \"tiempo\": 1606838321\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/consumo/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"consumo",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetDataDevice (local)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/api/consumo/resetearData/3FD1C0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"consumo",
+								"resetearData",
+								"3FD1C0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[ LIST FOR GRAPHICS ] getConsumoAnual  (local)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/api/consumo/listConsumoAnual",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"consumo",
+								"listConsumoAnual"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[ LIST ]  getConsumoByDevice  (local)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/api/consumo/existeConsumoDeDispositivoCreado/3FD1C0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"consumo",
+								"existeConsumoDeDispositivoCreado",
+								"3FD1C0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[ LIST FOR GRAPHICS ] getConsumoMensualPorAnio  (local)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/api/consumo/listConsumoMensualPorAnio/2020",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"consumo",
+								"listConsumoMensualPorAnio",
+								"2020"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listConsumoAnual_Device",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/api/consumo/listConsumoAnual_Device/3FD1C0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"consumo",
+								"listConsumoAnual_Device",
+								"3FD1C0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getConsumoMensualPorAnio_Device",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"device\": \"3FD1C0\",\n    \"anio\": 2020\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/consumo/listConsumoMensualPorAnio_Device",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"consumo",
+								"listConsumoMensualPorAnio_Device"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "AWS",
+			"item": [
+				{
+					"name": "[ LIST ] getConsumos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://23.20.233.116/api/consumo/list",
+							"protocol": "http",
+							"host": [
+								"23",
+								"20",
+								"233",
+								"116"
+							],
+							"path": [
+								"api",
+								"consumo",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://23.20.233.116/api/consumo/dia",
+							"protocol": "http",
+							"host": [
+								"23",
+								"20",
+								"233",
+								"116"
+							],
+							"path": [
+								"api",
+								"consumo",
+								"dia"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GuardarConsumo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"bateria\": 5000,\n        \"datos\": \"DATOSOSOSOSOSOS\",\n        \"debug\": \"1\",\n        \"device\": \"3FD1C0\",\n        \"pulsos\": 15800,\n        \"tiempo\": 1606578433\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://23.20.233.116/api/consumo/create",
+							"protocol": "http",
+							"host": [
+								"23",
+								"20",
+								"233",
+								"116"
+							],
+							"path": [
+								"api",
+								"consumo",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetDataDevice (local)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://23.20.233.116/api/consumo/resetearData/3FD1C0",
+							"protocol": "http",
+							"host": [
+								"23",
+								"20",
+								"233",
+								"116"
+							],
+							"path": [
+								"api",
+								"consumo",
+								"resetearData",
+								"3FD1C0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[ LIST FOR GRAPHICS ] getConsumoAnual",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://itnovarte.com/api/consumo/listConsumoAnual",
+							"protocol": "https",
+							"host": [
+								"itnovarte",
+								"com"
+							],
+							"path": [
+								"api",
+								"consumo",
+								"listConsumoAnual"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[ LIST ]  getConsumoByDevice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://23.20.233.116/api/consumo/list/3FD1C0",
+							"protocol": "http",
+							"host": [
+								"23",
+								"20",
+								"233",
+								"116"
+							],
+							"path": [
+								"api",
+								"consumo",
+								"list",
+								"3FD1C0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[ LIST FOR GRAPHICS ] getConsumoMensualPorAnio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://23.20.233.116/api/consumo/listConsumoMensualPorAnio/2020",
+							"protocol": "http",
+							"host": [
+								"23",
+								"20",
+								"233",
+								"116"
+							],
+							"path": [
+								"api",
+								"consumo",
+								"listConsumoMensualPorAnio",
+								"2020"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegistraDevice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://23.20.233.116/api/consumo/existeConsumoDeDispositivoCreado/3FD1C0",
+							"protocol": "http",
+							"host": [
+								"23",
+								"20",
+								"233",
+								"116"
+							],
+							"path": [
+								"api",
+								"consumo",
+								"existeConsumoDeDispositivoCreado",
+								"3FD1C0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getConsumoMensualPorAnio_Device",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"device\": \"3FD1C0\",\n    \"anio\": \"2020\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://23.20.233.116/api/consumo/listConsumoMensualPorAnio_Device",
+							"protocol": "http",
+							"host": [
+								"23",
+								"20",
+								"233",
+								"116"
+							],
+							"path": [
+								"api",
+								"consumo",
+								"listConsumoMensualPorAnio_Device"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listConsumoAnual_Device",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://23.20.233.116/api/consumo/listConsumoAnual_Device/3FD1C0",
+							"protocol": "http",
+							"host": [
+								"23",
+								"20",
+								"233",
+								"116"
+							],
+							"path": [
+								"api",
+								"consumo",
+								"listConsumoAnual_Device",
+								"3FD1C0"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "AWS-old",
+			"item": [
+				{
+					"name": "GuardarDevice",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"device\": \"3BBA3B\",\n        \"servicio\": \"Luz\",\n        \"locacion\": \"Las - zona 1\",\n        \"fec_registro\": \"2020-11-28 05:25:56\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://23.20.233.116/api/device/create",
+							"protocol": "http",
+							"host": [
+								"23",
+								"20",
+								"233",
+								"116"
+							],
+							"path": [
+								"api",
+								"device",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListaTotalConsumo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://23.20.233.116/api/consumo/list:device",
+							"protocol": "http",
+							"host": [
+								"23",
+								"20",
+								"233",
+								"116"
+							],
+							"path": [
+								"api",
+								"consumo",
+								"list:device"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarDispositivo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://23.20.233.116/api/device/list",
+							"protocol": "http",
+							"host": [
+								"23",
+								"20",
+								"233",
+								"116"
+							],
+							"path": [
+								"api",
+								"device",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "verMessage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://23.20.233.116/api/consumo/verMessage",
+					"protocol": "http",
+					"host": [
+						"23",
+						"20",
+						"233",
+						"116"
+					],
+					"path": [
+						"api",
+						"consumo",
+						"verMessage"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

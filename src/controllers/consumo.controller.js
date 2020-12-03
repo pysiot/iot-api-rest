@@ -209,6 +209,19 @@ function nombreMes(nro_mes){
 
 }
 
+function timeConverter(UNIX_timestamp){
+  var a = new Date(UNIX_timestamp * 1000);
+  var months = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Setiembre','Octubre','Noviembre','Diciembre'];
+  var year = a.getFullYear();
+  var month = months[a.getMonth()];
+  var date = a.getDate();
+  var hour = a.getHours();
+  var min = a.getMinutes();
+  var sec = a.getSeconds();
+  var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+  return time;
+}
+
 /* --------------------------------------------------------- */
 /* -------> POST ------------------------------------------- */
 async function createConsumo(req, res){
@@ -222,10 +235,11 @@ async function createConsumo(req, res){
   const {device, datos, pulsos, bateria, debug, tiempo} = req.body;
 
   // Calculo de fecha hor de registro
-  var fecha_calc = new Date(tiempo * 1000).toISOString().slice(0, 19).replace('T', ' ');
-  anio_calc = fecha_calc.substring(0, 4);
-  mes_calc = nombreMes(fecha_calc.substring(5, 7));
-  dia_calc = parseInt(fecha_calc.substring(8, 10));
+  var fecha_calc = timeConverter(tiempo);  // new Date(tiempo * 1000).toISOString().slice(0, 19).replace('T', ' ');
+  var a = new Date(tiempo * 1000);
+  anio_calc = a.getFullYear(); //fecha_calc.substring(0, 4);
+  mes_calc = nombreMes(a.getMonth()); //fecha_calc.substring(5, 7));
+  dia_calc = parseInt(a.getDate()); //fecha_calc.substring(8, 10));
 
   try {
 
