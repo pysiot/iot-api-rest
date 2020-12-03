@@ -235,11 +235,17 @@ async function createConsumo(req, res){
   const {device, datos, pulsos, bateria, debug, tiempo} = req.body;
 
   // Calculo de fecha hor de registro
-  var fecha_calc = timeConverter(tiempo);  // new Date(tiempo * 1000).toISOString().slice(0, 19).replace('T', ' ');
-  var a = new Date(tiempo * 1000);
-  anio_calc = a.getFullYear(); //fecha_calc.substring(0, 4);
-  mes_calc = nombreMes(a.getMonth()); //fecha_calc.substring(5, 7));
-  dia_calc = parseInt(a.getDate()); //fecha_calc.substring(8, 10));
+//  var fecha_calc = timeConverter(tiempo);  // new Date(tiempo * 1000).toISOString().slice(0, 19).replace('T', ' ');
+  var fecha_calc = new Date(tiempo * 1000).toISOString().slice(0, 19).replace('T', ' ');
+
+  //var a = new Date(tiempo * 1000);
+  // anio_calc = a.getFullYear(); //fecha_calc.substring(0, 4);
+  // mes_calc = nombreMes(a.getMonth()); //fecha_calc.substring(5, 7));
+  // dia_calc = parseInt(a.getDate()); //fecha_calc.substring(8, 10));
+  anio_calc = fecha_calc.substring(0, 4);
+  mes_calc = fecha_calc.substring(5, 7);
+  dia_calc = fecha_calc.substring(8, 10);
+
 
   try {
 
