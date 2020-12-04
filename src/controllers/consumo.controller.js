@@ -243,7 +243,7 @@ async function createConsumo(req, res){
   // mes_calc = nombreMes(a.getMonth()); //fecha_calc.substring(5, 7));
   // dia_calc = parseInt(a.getDate()); //fecha_calc.substring(8, 10));
   anio_calc = fecha_calc.substring(0, 4);
-  mes_calc = fecha_calc.substring(5, 7);
+  mes_calc = nombreMes(fecha_calc.substring(5, 7));
   dia_calc = fecha_calc.substring(8, 10);
 
 
